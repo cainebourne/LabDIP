@@ -15,7 +15,7 @@ public class GuiReader implements Reader {
     public String readln() {
         
         
-        //JOptionPane.showInputDialog("What's your name?");
+        
         String message = JOptionPane.showInputDialog("Enter your message");
          
         return message;
