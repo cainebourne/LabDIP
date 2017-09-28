@@ -9,9 +9,9 @@ package dip.lab2;
  * @author your name goes here
  */
 public class FoodServiceTipCalculator implements TipCalculator {
-    private static double GOOD_RATE = 0.20;
-    private static double FAIR_RATE = 0.15;
-    private static double POOR_RATE = 0.10;
+    private  double GOOD_RATE = 0.20;
+    private  double FAIR_RATE = 0.15;
+    private  double POOR_RATE = 0.10;
 
     private double bill;
    
@@ -56,18 +56,18 @@ public class FoodServiceTipCalculator implements TipCalculator {
         return FAIR_RATE;
     }
 
-    public final static void setFAIR_RATE(double FAIR_RATE) {
+    public final void setFAIR_RATE(double FAIR_RATE) {
         if(FAIR_RATE <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
         FoodServiceTipCalculator.FAIR_RATE = FAIR_RATE;
     }
 
-    public final static double getPOOR_RATE() {
+    public final double getPOOR_RATE() {
         return POOR_RATE;
     }
 
-    public final static void setPOOR_RATE(double POOR_RATE) {
+    public final void setPOOR_RATE(double POOR_RATE) {
          if(POOR_RATE <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
