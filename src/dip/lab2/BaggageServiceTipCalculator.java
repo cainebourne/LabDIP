@@ -10,11 +10,11 @@ package dip.lab2;
  */
 public class BaggageServiceTipCalculator implements TipCalculator {
     
-    private static double MAX_BILL = 100.00;
+    private double MAX_BILL = 100.00;
     
-    private static double GOOD_RATE = 0.20;
-    private static double FAIR_RATE = 0.15;
-    private static double POOR_RATE = 0.10;
+    private double GOOD_RATE = 0.20;
+    private double FAIR_RATE = 0.15;
+    private double POOR_RATE = 0.10;
 
     private double baseTipPerBag;
     private int bagCount;
@@ -47,11 +47,11 @@ public class BaggageServiceTipCalculator implements TipCalculator {
         return tip;
     }
 
-    public final static double getMAX_BILL() {
+    public final double getMAX_BILL() {
         return MAX_BILL;
     }
 
-    public final static void setMAX_BILL(double MAX_BILL) {
+    public final void setMAX_BILL(double MAX_BILL) {
         if(MAX_BILL <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
@@ -62,29 +62,29 @@ public class BaggageServiceTipCalculator implements TipCalculator {
         return GOOD_RATE;
     }
 
-    public final static void setGOOD_RATE(double GOOD_RATE) {
+    public final void setGOOD_RATE(double GOOD_RATE) {
         if(GOOD_RATE <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
         BaggageServiceTipCalculator.GOOD_RATE = GOOD_RATE;
     }
 
-    public final static double getFAIR_RATE() {
+    public final double getFAIR_RATE() {
         return FAIR_RATE;
     }
 
-    public final static void setFAIR_RATE(double FAIR_RATE) {
+    public final void setFAIR_RATE(double FAIR_RATE) {
         if(FAIR_RATE <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
         BaggageServiceTipCalculator.FAIR_RATE = FAIR_RATE;
     }
 
-    public final static double getPOOR_RATE() {
+    public final double getPOOR_RATE() {
         return POOR_RATE;
     }
 
-    public final static void setPOOR_RATE(double POOR_RATE) {
+    public final void setPOOR_RATE(double POOR_RATE) {
         if(POOR_RATE <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
