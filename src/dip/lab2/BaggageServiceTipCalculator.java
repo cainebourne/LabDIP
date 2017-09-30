@@ -58,7 +58,7 @@ public class BaggageServiceTipCalculator implements TipCalculator {
         BaggageServiceTipCalculator.MAX_BILL = MAX_BILL;
     }
 
-    public final static double getGOOD_RATE() {
+    public final double getGOOD_RATE() {
         return GOOD_RATE;
     }
 
