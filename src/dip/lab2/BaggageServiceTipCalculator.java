@@ -10,11 +10,11 @@ package dip.lab2;
  */
 public class BaggageServiceTipCalculator implements TipCalculator {
     
-    private double MAX_BILL = 100.00;
+    private static double MAX_BILL = 100.00;
     
-    private double GOOD_RATE = 0.20;
-    private double FAIR_RATE = 0.15;
-    private double POOR_RATE = 0.10;
+    private double goodRate = 0.20;
+    private double fairRate = 0.15;
+    private double poorRate = 0.10;
 
     private double baseTipPerBag;
     private int bagCount;
@@ -34,13 +34,13 @@ public class BaggageServiceTipCalculator implements TipCalculator {
 
         switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                tip = baseTipPerBag * bagCount * (1 + goodRate);
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + fairRate);
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + poorRate);
                 break;
         }
 
@@ -58,41 +58,39 @@ public class BaggageServiceTipCalculator implements TipCalculator {
         BaggageServiceTipCalculator.MAX_BILL = MAX_BILL;
     }
 
-    public final double getGOOD_RATE() {
-        return GOOD_RATE;
+    public double getGoodRate() {
+        return goodRate;
     }
 
-    public final void setGOOD_RATE(double GOOD_RATE) {
-        if(GOOD_RATE <= 0){
+    public void setGoodRate(double goodRate) {
+        if(goodRate <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
-        BaggageServiceTipCalculator.GOOD_RATE = GOOD_RATE;
+        this.goodRate = goodRate;
     }
 
-    public final double getFAIR_RATE() {
-        return FAIR_RATE;
+    public double getFairRate() {
+        return fairRate;
     }
 
-    public final void setFAIR_RATE(double FAIR_RATE) {
-        if(FAIR_RATE <= 0){
+    public void setFairRate(double fairRate) {
+        if(fairRate <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
-        BaggageServiceTipCalculator.FAIR_RATE = FAIR_RATE;
+        this.fairRate = fairRate;
     }
 
-    public final double getPOOR_RATE() {
-        return POOR_RATE;
+    public double getPoorRate() {
+        return poorRate;
     }
 
-    public final void setPOOR_RATE(double POOR_RATE) {
-        if(POOR_RATE <= 0){
+    public void setPoorRate(double poorRate) {
+          if(poorRate <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
-        BaggageServiceTipCalculator.POOR_RATE = POOR_RATE;
+        this.poorRate = poorRate;
     }
     
-    
-
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
