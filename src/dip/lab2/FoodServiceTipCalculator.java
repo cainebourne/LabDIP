@@ -9,9 +9,9 @@ package dip.lab2;
  * @author your name goes here
  */
 public class FoodServiceTipCalculator implements TipCalculator {
-    private  double GOOD_RATE = 0.20;
-    private  double FAIR_RATE = 0.15;
-    private  double POOR_RATE = 0.10;
+    private double goodRate = 0.20;
+    private double fairRate = 0.15;
+    private double poorRate = 0.10;
 
     private double bill;
    
@@ -28,54 +28,51 @@ public class FoodServiceTipCalculator implements TipCalculator {
 
         switch(serviceQuality) {
             case GOOD:
-                tip = bill * GOOD_RATE;
+                tip = bill * goodRate;
                 break;
             case FAIR:
-                tip = bill * FAIR_RATE;
+                tip = bill * fairRate;
                 break;
             case POOR:
-                tip = bill * POOR_RATE;
+                tip = bill * poorRate;
                 break;
         }
 
         return tip;
     }
 
-    public final double getGOOD_RATE() {
-        return GOOD_RATE;
+    public double getGoodRate() {
+        return goodRate;
     }
 
-    public final void setGOOD_RATE(double GOOD_RATE) {
-        if(GOOD_RATE <= 0){
+    public void setGoodRate(double goodRate) {
+         if(goodRate <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
-        FoodServiceTipCalculator.GOOD_RATE = GOOD_RATE;
+        this.goodRate = goodRate;
     }
 
-    public final double getFAIR_RATE() {
-        return FAIR_RATE;
+    public double getFairRate() {
+        return fairRate;
     }
 
-    public final void setFAIR_RATE(double FAIR_RATE) {
-        if(FAIR_RATE <= 0){
+    public void setFairRate(double fairRate) {
+         if(fairRate <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
-        FoodServiceTipCalculator.FAIR_RATE = FAIR_RATE;
+        this.fairRate = fairRate;
     }
 
-    public final double getPOOR_RATE() {
-        return POOR_RATE;
+    public double getPoorRate() {
+        return poorRate;
     }
 
-    public final void setPOOR_RATE(double POOR_RATE) {
-         if(POOR_RATE <= 0){
+    public void setPoorRate(double poorRate) {
+        if(poorRate <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
-        FoodServiceTipCalculator.POOR_RATE = POOR_RATE;
+        this.poorRate = poorRate;
     }
-    
-    
-            
 
     public final void setBill(double billAmt) {
         if(billAmt < MIN_BILL) {
