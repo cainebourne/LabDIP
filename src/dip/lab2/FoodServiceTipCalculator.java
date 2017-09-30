@@ -41,18 +41,18 @@ public class FoodServiceTipCalculator implements TipCalculator {
         return tip;
     }
 
-    public final static double getGOOD_RATE() {
+    public final double getGOOD_RATE() {
         return GOOD_RATE;
     }
 
-    public final static void setGOOD_RATE(double GOOD_RATE) {
+    public final void setGOOD_RATE(double GOOD_RATE) {
         if(GOOD_RATE <= 0){
             throw new IllegalArgumentException("Not A valid tip amount");
         }
         FoodServiceTipCalculator.GOOD_RATE = GOOD_RATE;
     }
 
-    public final static double getFAIR_RATE() {
+    public final double getFAIR_RATE() {
         return FAIR_RATE;
     }
 
