@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dip.lab3;
 
 /**
@@ -17,8 +12,30 @@ public class Messenger {
 		this.reader = reader;
 		this.writer = writer;
 	}
+
+    public Reader getReader() {
+        return reader;
+    }
+
+    public void setReader(Reader reader) {
+         if(reader == null){
+            throw new IllegalArgumentException("reader is required");
+        }
+        this.reader = reader;
+    }
+
+    public Writer getWriter() {
+        return writer;
+    }
+
+    public void setWriter(Writer writer) {
+         if(writer == null){
+            throw new IllegalArgumentException("writer is required");
+        }
+        this.writer = writer;
+    }
 	
-	public void showMessage() {
+	public final void showMessage() {
             String line = reader.readln();
             writer.writeln( line );
 	}
